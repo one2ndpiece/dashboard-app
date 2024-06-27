@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# 環境構築
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+npx create-react-app dashboard-app --template typescript
 
-## Available Scripts
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 
-In the project directory, you can run:
+root@d8e798801d45:/workspace/learn-web/dashboard-app# npx shadcn-ui@latest init
+✔ Would you like to use TypeScript (recommended)? … no / yes
+✔ Which style would you like to use? › Default
+? Which color would you like to use as base color? › - Use arrow-keys. Return to
+✔ Which color would you like to use as base color? › Slate
+✔ Where is your global CSS file? … src/index.css
+✔ Would you like to use CSS variables for colors? … no / yes
+✔ Are you using a custom tailwind prefix eg. tw-? (Leave blank if not) … 
+✔ Where is your tailwind.config.js located? … tailwind.config.js
+✔ Configure the import alias for components: … src/components
+✔ Configure the import alias for utils: … src/lib/utils
+✔ Are you using React Server Components? … no / yes
+✔ Write configuration to components.json. Proceed? … yes
 
-### `npm start`
+✔ Writing components.json...
+✔ Initializing project...
+⠙ Installing dependencies...
+✔ Installing dependencies...
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Success! Project initialization completed. You may now add components.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- 各種コンポーネントの追加
+- `npx shadcn-ui@latest add button`
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install @radix-ui/react-alert-dialog
