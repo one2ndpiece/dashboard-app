@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import { Button } from 'src/components/ui/button';
 import { Item } from 'src/types/types';
 import ItemList from '../ItemList/ItemList';
+import loadItems from 'src/lib/loadItems';
 
-const SAMPLE_ITEMS: Item[] = [
-    { id: 1, name: 'Infinity Edge', cost: 3400, description: 'Critically strike for more damage.', stats: { attackDamage: 70, criticalStrike: 20 } },
-    { id: 2, name: 'Rabadon\'s Deathcap', cost: 3600, description: 'Increases Ability Power by 35%', stats: { abilityPower: 120 } },
-    { id: 3, name: 'Thornmail', cost: 2700, description: 'Reflects damage to attackers.', stats: { armor: 80 } },
-    { id: 4, name: 'Void Staff', cost: 2700, description: 'Magic damage partially ignores target\'s magic resistance.', stats: { abilityPower: 65, magicPenetration: 40 } },
-    { id: 5, name: 'Blade of the Ruined King', cost: 3200, description: 'Deals current health damage on hit.', stats: { attackDamage: 40, attackSpeed: 25, lifesteal: 12 } },
-];
+
+const SAMPLE_ITEMS: Item[] = loadItems();
 
 const ItemsDashboard: React.FC = () => {
     const [selectedStats, setSelectedStats] = useState<Record<string, boolean>>({});
