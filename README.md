@@ -28,5 +28,7 @@ Success! Project initialization completed. You may now add components.
 
 - 各種コンポーネントの追加
 - `npx shadcn-ui@latest add button`
+- `npx shadcn-ui@latest add card`
+- `npx shadcn-ui@latest add alert-dialog`
 
-npm install @radix-ui/react-alert-dialog
+- `npm install @radix-ui/react-alert-dialog`

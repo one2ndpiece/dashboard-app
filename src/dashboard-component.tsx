@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from 'src/components/ui/card';
 import { Button } from 'src/components/ui/button';
@@ -65,7 +63,7 @@ const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
           </CardContent>
         </Card>
       </AlertDialogTrigger>
-      <AlertDialogContent className='text-gray-300 bg-gray-800 rounded-lg'>
+      <AlertDialogContent className='text-gray-700 bg-gray-100 rounded-lg'>
         <AlertDialogHeader>
           <AlertDialogTitle>{item.name}</AlertDialogTitle>
           <AlertDialogDescription >
@@ -80,7 +78,7 @@ const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Close</AlertDialogCancel>
+          <AlertDialogCancel className='border-gray-500 bg-slate-200'>Close</AlertDialogCancel>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
