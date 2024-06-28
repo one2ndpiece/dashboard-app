@@ -1,8 +1,6 @@
-import React from 'react';
 import './App.css';
+import ItemsDashboard from './components/customs/ItemsDashboard/ItemsDashboard';
 import './index.css';
-import { Button } from './components/ui/button';
-import ItemsDashboard from './dashboard-component';
 
 function App() {
   return (
