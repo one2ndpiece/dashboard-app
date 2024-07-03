@@ -1,12 +1,13 @@
-import itemsRawData from 'src/data/items_data.json';
+// import itemsRawData from 'src/data/items_data.json';
+import itemsRawData from 'src/data/item_info/14.13.1.json';
 import { Item } from 'src/types/types';
 
 const loadItems = (): Item[] => {
-    if (itemsRawData.data == null) {
+    if (itemsRawData == null) {
         return [];
     }
 
-    const targetData = itemsRawData.data;
+    const targetData = itemsRawData;
     const items: Item[] = [];
 
     for (const id in targetData) {
@@ -14,7 +15,7 @@ const loadItems = (): Item[] => {
         const item: Item = {
             id: Number(id),
             name: itemData.name ?? "",
-            cost: itemData.gold?.base ?? 0,
+            cost: itemData.gold?.total ?? 0,
             description: itemData.description ?? "",
             stats: itemData.stats ?? {}
         };
