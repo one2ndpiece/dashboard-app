@@ -28,7 +28,7 @@ const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
                     </CardHeader>
                     <CardContent>
                         <p className="text-sm text-gray-400">Cost: {item.cost} gold</p>
-                        <p className="mt-2 text-gray-300">{item.description}</p>
+                        <p className="mt-2 text-gray-300" dangerouslySetInnerHTML={{ __html: item.description }}></p>
                         <div className="mt-2">
                             <strong className="text-blue-400">Stats:</strong>
                             <ul className="list-disc list-inside text-gray-300">
@@ -43,7 +43,7 @@ const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
             <AlertDialogContent className='text-gray-700 bg-gray-100 rounded-lg'>
                 <AlertDialogHeader>
                     <AlertDialogTitle>{item.name}</AlertDialogTitle>
-                    <AlertDialogDescription >
+                    <AlertDialogDescription dangerouslySetInnerHTML={{ __html: item.description }}>
                         <p>Cost: {item.cost} gold</p>
                         <p>{item.description}</p>
                         <strong>Stats:</strong>
