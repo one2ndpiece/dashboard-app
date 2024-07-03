@@ -11,6 +11,7 @@ import {
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from 'src/components/ui/card';
 import { Item } from 'src/types/types';
+import { RarityLegendary, SubtitleLeft, Silver } from 'src/components/customs/CustomTags';
 
 const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -28,7 +29,7 @@ const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
                     </CardHeader>
                     <CardContent>
                         <p className="text-sm text-gray-400">Cost: {item.cost} gold</p>
-                        <p className="mt-2 text-gray-300" dangerouslySetInnerHTML={{ __html: item.description }}></p>
+                        <p className="mt-2 text-gray-300" dangerouslySetInnerHTML={{ __html: item.description }}></p> {/* HTMLとしてレンダリング */}
                         <div className="mt-2">
                             <strong className="text-blue-400">Stats:</strong>
                             <ul className="list-disc list-inside text-gray-300">
@@ -45,7 +46,7 @@ const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
                     <AlertDialogTitle>{item.name}</AlertDialogTitle>
                     <AlertDialogDescription>
                         <p>Cost: {item.cost} gold</p>
-                        <div dangerouslySetInnerHTML={{ __html: item.description }}></div>
+                        <div dangerouslySetInnerHTML={{ __html: item.description }}></div> {/* HTMLとしてレンダリング */}
                         <strong>Stats:</strong>
                         <ul>
                             {Object.entries(item.stats).map(([stat, value]) => (
