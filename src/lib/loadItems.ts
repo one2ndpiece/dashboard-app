@@ -13,13 +13,9 @@ const loadItems = (): Item[] => {
     for (const id in targetData) {
         const itemData = (targetData as { [key: string]: any })[id];
 
-        if (!itemData.gold?.purchasable) {
+        if (excludeItems(itemData)) {
             continue;
         }
-        if (!itemData.maps["11"]) {
-            continue;
-        }
-
 
         const item: Item = {
             id: Number(id),
@@ -32,6 +28,14 @@ const loadItems = (): Item[] => {
     }
 
     return items;
+}
+
+// 表示しないアイテムを選別する
+const excludeItems = (itemData: { gold?: { purchasable: boolean }, maps?: { [key: string]: any } }): boolean => {
+    if (itemData.gold == null || itemData.maps == null) {
+        return true;
+    }
+    return !itemData.gold.purchasable || !itemData.maps["11"];
 }
 
 export default loadItems;
