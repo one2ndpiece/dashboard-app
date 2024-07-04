@@ -7,26 +7,27 @@ const loadItems = (): Item[] => {
     }
 
     const targetData: ItemListJsonType = itemsRawData;
-    const items: Item[] = [];
 
-    for (const itemId in targetData) {
-        const itemData = targetData[itemId];
-
-        if (excludeItems(itemData)) {
-            continue;
-        }
-
-        const item: Item = {
-            id: Number(itemId),
-            name: itemData.name,
-            cost: itemData.gold.total,
-            description: itemData.description,
-            stats: itemData.stats
-        };
-        items.push(item);
-    }
-
-    return items;
+    // for文ではなく配列の関数（filter, mapなど）使った方が処理が明確になる
+    // Object.entries(XXX)はXXXを[[Key, Value], [Key, Value],...]のように配列で表現できる
+    return Object.entries(targetData)
+        .filter(itemDataEntries => {
+            // 表示不要なアイテムを配列から除外する
+            const itemData = itemDataEntries[1];
+            return !excludeItems(itemData);
+        }).map(keyValueArray => {
+            // ItemのJsonデータをItem型に変換する
+            const itemId = keyValueArray[0];
+            const itemData = keyValueArray[1];
+            const item: Item = {
+                id: Number(itemId),
+                name: itemData.name,
+                cost: itemData.gold.total,
+                description: itemData.description,
+                stats: itemData.stats
+            };
+            return item;
+        });
 }
 
 // 表示しないアイテムを選別する
