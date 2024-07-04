@@ -25,6 +25,7 @@ const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
                     onMouseLeave={() => setIsHovered(false)}
                 >
                     <CardHeader>
+                        <img src={`${process.env.PUBLIC_URL}/images/14.13.1/${item.image}`} alt="item thumsnail" />
                         <CardTitle className="text-blue-400">{item.name}</CardTitle>
                     </CardHeader>
                     <CardContent>

@@ -4,6 +4,7 @@ export interface Item {
     cost: number;
     description: string;
     stats: ItemStat;
+    image: string
 }
 
 export interface ItemStat {
@@ -23,6 +24,9 @@ export type ItemJsonType = {
         total: number,
         sell: number
     },
+    image: {
+        full: string
+    }
     maps: {
         [mapId: string]: boolean
     },

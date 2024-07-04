@@ -22,6 +22,7 @@ const loadItems = (): Item[] => {
             const item: Item = {
                 id: Number(itemId),
                 name: itemData.name,
+                image: itemData.image.full,
                 cost: itemData.gold.total,
                 description: itemData.description,
                 stats: itemData.stats
