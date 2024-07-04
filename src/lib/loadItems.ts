@@ -1,28 +1,27 @@
-// import itemsRawData from 'src/data/items_data.json';
 import itemsRawData from 'src/data/item_info/14.13.1.json';
-import { Item } from 'src/types/types';
+import { Item, ItemJsonType, ItemListJsonType } from 'src/types/types';
 
 const loadItems = (): Item[] => {
     if (itemsRawData == null) {
         return [];
     }
 
-    const targetData = itemsRawData;
+    const targetData: ItemListJsonType = itemsRawData;
     const items: Item[] = [];
 
-    for (const id in targetData) {
-        const itemData = (targetData as { [key: string]: any })[id];
+    for (const itemId in targetData) {
+        const itemData = targetData[itemId];
 
         if (excludeItems(itemData)) {
             continue;
         }
 
         const item: Item = {
-            id: Number(id),
-            name: itemData.name ?? "",
-            cost: itemData.gold?.total ?? 0,
-            description: itemData.description ?? "",
-            stats: itemData.stats ?? {}
+            id: Number(itemId),
+            name: itemData.name,
+            cost: itemData.gold.total,
+            description: itemData.description,
+            stats: itemData.stats
         };
         items.push(item);
     }
@@ -31,7 +30,7 @@ const loadItems = (): Item[] => {
 }
 
 // 表示しないアイテムを選別する
-const excludeItems = (itemData: { gold?: { purchasable: boolean }, maps?: { [key: string]: any } }): boolean => {
+const excludeItems = (itemData: ItemJsonType): boolean => {
     if (itemData.gold == null || itemData.maps == null) {
         return true;
     }
