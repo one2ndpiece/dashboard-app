@@ -12,6 +12,15 @@ const loadItems = (): Item[] => {
 
     for (const id in targetData) {
         const itemData = (targetData as { [key: string]: any })[id];
+
+        if (!itemData.gold?.purchasable) {
+            continue;
+        }
+        if (!itemData.maps["11"]) {
+            continue;
+        }
+
+
         const item: Item = {
             id: Number(id),
             name: itemData.name ?? "",
