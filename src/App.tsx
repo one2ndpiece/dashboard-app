@@ -1,13 +1,12 @@
-import './App.css';
-import ItemsDashboard from './components/customs/ItemsDashboard/ItemsDashboard';
-import './index.css';
+import React from 'react';
+import EntryPage from 'src/pages/entrypage';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <ItemsDashboard />
+      <EntryPage />
     </div>
   );
-}
+};
 
 export default App;

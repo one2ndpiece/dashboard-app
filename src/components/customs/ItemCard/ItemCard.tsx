@@ -11,7 +11,6 @@ import {
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from 'src/components/ui/card';
 import { Item } from 'src/types/types';
-import { RarityLegendary, SubtitleLeft, Silver } from 'src/components/customs/CustomTags';
 
 const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -20,7 +19,7 @@ const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
         <AlertDialog>
             <AlertDialogTrigger asChild>
                 <Card
-                    className={`w-64 m-2 bg-gray-800 text-white border border-gray-700 shadow-md transition-all duration-300 cursor-pointer ${isHovered ? 'shadow-lg scale-105' : ''}`}
+                    className={`w-80 m-2 bg-gray-800 text-white border border-gray-700 shadow-md transition-all duration-300 cursor-pointer ${isHovered ? 'shadow-lg scale-105' : ''}`}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
