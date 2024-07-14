@@ -20,7 +20,7 @@ const EntryPage: React.FC = () => {
     };
 
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <div className="flex h-screen bg-gray-900">
                 <aside className={`bg-gray-800 text-white h-full p-4 transition-all duration-300 ${isSidebarOpen ? 'w-64' : 'w-16'}`}>
                     <button onClick={toggleSidebar} className="text-blue-300 hover:text-blue-500 mb-4 w-full flex justify-end">
@@ -35,7 +35,7 @@ const EntryPage: React.FC = () => {
                                 </Link>
                             </li>
                             <li className="mb-4">
-                                <Link to="/dashboard" className="text-blue-300 hover:text-blue-500 flex items-center">
+                                <Link to="/dashboard-app" className="text-blue-300 hover:text-blue-500 flex items-center">
                                     <FaTachometerAlt className="mr-2" />
                                     {isSidebarOpen && 'Dashboard'}
                                 </Link>
@@ -45,7 +45,7 @@ const EntryPage: React.FC = () => {
                 </aside>
                 <main className="flex-1 p-4 overflow-auto">
                     <Routes>
-                        <Route path="/dashboard" element={<ItemsDashboard />} />
+                        <Route path="/dashboard-app" element={<ItemsDashboard />} />
                         <Route path="/" element={<DefaultPage />} />
                     </Routes>
                 </main>

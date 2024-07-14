@@ -32,3 +32,5 @@ Success! Project initialization completed. You may now add components.
 - `npx shadcn-ui@latest add alert-dialog`
 
 - `npm install @radix-ui/react-alert-dialog`
+- `npm install react-icons`
+- `npm install react-router-dom`
