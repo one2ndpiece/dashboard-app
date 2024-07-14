@@ -35,7 +35,7 @@ const EntryPage: React.FC = () => {
                                 </Link>
                             </li>
                             <li className="mb-4">
-                                <Link to="/dashboard-app" className="text-blue-300 hover:text-blue-500 flex items-center">
+                                <Link to="/dashboard" className="text-blue-300 hover:text-blue-500 flex items-center">
                                     <FaTachometerAlt className="mr-2" />
                                     {isSidebarOpen && 'Dashboard'}
                                 </Link>
@@ -45,8 +45,9 @@ const EntryPage: React.FC = () => {
                 </aside>
                 <main className="flex-1 p-4 overflow-auto">
                     <Routes>
-                        <Route path="/dashboard-app" element={<ItemsDashboard />} />
                         <Route path="/" element={<DefaultPage />} />
+                        <Route path="/dashboard" element={<ItemsDashboard />} />
+                        <Route path="*" element={<DefaultPage />} />
                     </Routes>
                 </main>
             </div>
